@@ -1,0 +1,543 @@
+/* ============================================================
+   theme.css — светлая и тёмная темы + модальное окно
+   Портал «Дети в сети»
+   ============================================================ */
+
+/* ---------- Светлая тема (по умолчанию) ---------- */
+:root {
+  --bg: #f5f7fb;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #f7f9fc;
+  --bg-hero: #ffffff;
+
+  --text: #1c2333;
+  --text-muted: #46506b;
+  --text-invert: #ffffff;
+
+  --accent: #6a11cb;
+  --accent-2: #ff7a18;
+  --accent-link: #6a11cb;
+
+  --border: #e6ebf3;
+  --border-strong: #d7deec;
+
+  --shadow: 0 10px 30px rgba(30, 60, 114, .15);
+  --shadow-soft: 0 6px 18px rgba(30, 60, 114, .10);
+
+  --notice-warning-bg: #fff1de;
+  --notice-warning-border: #ff7a18;
+  --notice-warning-title: #b35400;
+
+  --notice-tip-bg: #e3f7e9;
+  --notice-tip-border: #1e7e34;
+  --notice-tip-title: #1e7e34;
+
+  --notice-order-bg: #efe6ff;
+  --notice-order-border: #6a11cb;
+  --notice-order-title: #6a11cb;
+
+  --badge-easy-bg: #e3f7e9;
+  --badge-easy-text: #1e7e34;
+  --badge-mid-bg: #fff1de;
+  --badge-mid-text: #b35400;
+
+  --table-head-bg: #1e3c72;
+  --table-head-text: #ffffff;
+  --table-stripe: #f7f9fc;
+  --table-hover: #efe6ff;
+  --table-caption-bg: #efe6ff;
+  --table-caption-text: #1e3c72;
+
+  --mark-bg: #ffd200;
+  --mark-text: #1c2333;
+
+  --result-neutral-bg: #e6ebf3;
+  --result-neutral-text: #1c2333;
+  --result-high-bg: #e3f7e9;
+  --result-high-text: #1e7e34;
+  --result-mid-bg: #fff1de;
+  --result-mid-text: #b35400;
+  --result-low-bg: #ffe1e1;
+  --result-low-text: #b30000;
+
+  --fail-gradient-start: #fff8f2;
+}
+
+/* ---------- Тёмная тема ---------- */
+html[data-theme="dark"] {
+  --bg: #0f1420;
+  --bg-card: #1a2130;
+  --bg-elevated: #232b3d;
+  --bg-subtle: #161d2b;
+  --bg-hero: #1a2130;
+
+  --text: #e8ecf7;
+  --text-muted: #a3adc4;
+  --text-invert: #0f1420;
+
+  --accent: #9b6bff;
+  --accent-2: #ff9a4a;
+  --accent-link: #b794ff;
+
+  --border: #2a3247;
+  --border-strong: #3a4459;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, .5);
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, .4);
+
+  --notice-warning-bg: #2a1e0c;
+  --notice-warning-border: #ff9a4a;
+  --notice-warning-title: #ffb066;
+
+  --notice-tip-bg: #0e2417;
+  --notice-tip-border: #34d17a;
+  --notice-tip-title: #6ee7a7;
+
+  --notice-order-bg: #1e1338;
+  --notice-order-border: #9b6bff;
+  --notice-order-title: #c4a6ff;
+
+  --badge-easy-bg: #0e2417;
+  --badge-easy-text: #6ee7a7;
+  --badge-mid-bg: #2a1e0c;
+  --badge-mid-text: #ffb066;
+
+  --table-head-bg: #232b3d;
+  --table-head-text: #e8ecf7;
+  --table-stripe: #161d2b;
+  --table-hover: #232b3d;
+  --table-caption-bg: #1e1338;
+  --table-caption-text: #c4a6ff;
+
+  --mark-bg: #ffd200;
+  --mark-text: #1c2333;
+
+  --result-neutral-bg: #232b3d;
+  --result-neutral-text: #e8ecf7;
+  --result-high-bg: #0e2417;
+  --result-high-text: #6ee7a7;
+  --result-mid-bg: #2a1e0c;
+  --result-mid-text: #ffb066;
+  --result-low-bg: #2a1010;
+  --result-low-text: #ff8a8a;
+
+  --fail-gradient-start: #2a1a0c;
+}
+
+/* ============================================================
+   Базовые элементы
+   ============================================================ */
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s ease, color .3s ease;
+}
+
+h1, h2, h3 { color: var(--text); }
+p, li { color: var(--text); }
+.section-note, .lead { color: var(--text-muted); }
+
+/* ---------- Ссылки ---------- */
+a { color: var(--accent-link); }
+
+.site-header a,
+.site-footer a { color: inherit; }
+
+.site-header .main-nav a { color: #ffffff; }
+
+main a:not(.btn):not(.more):not(.sidenav a):not(.breadcrumbs a):not(.note a) {
+  color: var(--accent-link);
+}
+
+/* ============================================================
+   Шапка и подвал
+   ============================================================ */
+
+.site-header { color: #ffffff; }
+
+.site-header .main-nav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, .18);
+}
+
+.site-header .main-nav a.active,
+.site-header .main-nav a[aria-current="page"] {
+  color: #ffffff;
+  background: rgba(255, 255, 255, .22);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .4);
+}
+
+.site-header .logo-text { color: #ffffff; }
+
+html[data-theme="dark"] .site-header {
+  background: linear-gradient(135deg, #0f1c38 0%, #3a1e5e 100%);
+}
+
+.site-footer { color: #cfd6ea; }
+
+html[data-theme="dark"] .site-footer { background: #060a14; }
+
+/* ============================================================
+   Кнопка переключения темы
+   ============================================================ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: background .25s ease, border-color .25s ease;
+}
+
+.theme-toggle:hover { background: rgba(255, 255, 255, .15); }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+.theme-toggle::before { content: "☀"; }
+html[data-theme="dark"] .theme-toggle::before { content: "☾"; }
+
+/* ============================================================
+   Герой
+   ============================================================ */
+
+html[data-theme="dark"] .hero {
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] .hero h1 { color: var(--text); }
+html[data-theme="dark"] .hero .lead { color: var(--text-muted); }
+
+/* ============================================================
+   Карточки, новости, sidenav, таблицы
+   ============================================================ */
+
+.card,
+.news-item,
+.sidenav,
+.data-table {
+  background: var(--bg-card);
+  color: var(--text);
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.card p,
+.news-item p { color: var(--text-muted); }
+
+html[data-theme="dark"] .card:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, .6); }
+
+html[data-theme="dark"] .card--glow {
+  background: radial-gradient(circle at 30% 20%, #2a3247 0%, #1a2130 55%, #0f1420 100%);
+}
+
+/* ============================================================
+   Врезка .note — сохраняет градиент в обеих темах
+   ============================================================ */
+
+.note {
+  background: linear-gradient(160deg, #1e3c72, #6a11cb);
+  color: #e8ecf7;
+}
+
+.note h3 { color: #ffffff; }
+.note p { color: #c9d2ea; }
+
+.note a,
+main .note a {
+  color: #ffd200;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.note a:hover,
+main .note a:hover { color: #ffffff; }
+
+html[data-theme="dark"] .note {
+  background: linear-gradient(160deg, #1a2130, #2a1d4a);
+}
+
+html[data-theme="dark"] .note h3 { color: #ffffff; }
+html[data-theme="dark"] .note p { color: #c9d2ea; }
+html[data-theme="dark"] .note a { color: #ffd200; }
+
+/* ============================================================
+   Основные положения — плашки списка
+   ============================================================ */
+
+html[data-theme="dark"] .key-points > ul li {
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+/* ============================================================
+   Врезки .notice
+   ============================================================ */
+
+.notice--warning {
+  background: var(--notice-warning-bg);
+  border-color: var(--notice-warning-border);
+}
+.notice--warning h3 { color: var(--notice-warning-title); }
+
+.notice--tip {
+  background: var(--notice-tip-bg);
+  border-color: var(--notice-tip-border);
+}
+.notice--tip h3 { color: var(--notice-tip-title); }
+
+.notice--order {
+  background: var(--notice-order-bg);
+  border-color: var(--notice-order-border);
+}
+.notice--order h3 { color: var(--notice-order-title); }
+
+.notice p,
+.notice li { color: var(--text); }
+
+/* ============================================================
+   Бейджи
+   ============================================================ */
+
+.badge--easy { background: var(--badge-easy-bg); color: var(--badge-easy-text); }
+.badge--mid  { background: var(--badge-mid-bg);  color: var(--badge-mid-text); }
+
+/* ============================================================
+   Таблицы
+   ============================================================ */
+
+.data-table { color: var(--text); }
+
+.data-table th,
+.data-table td { border-bottom: 1px solid var(--border); }
+
+.data-table thead th { background: var(--table-head-bg); color: var(--table-head-text); }
+.data-table tbody tr:nth-child(even) { background: var(--table-stripe); }
+.data-table tbody tr:hover { background: var(--table-hover); }
+.data-table caption { background: var(--table-caption-bg); color: var(--table-caption-text); }
+
+/* ============================================================
+   Хлебные крошки
+   ============================================================ */
+
+.breadcrumbs,
+.breadcrumbs ol { color: var(--text-muted); }
+
+.breadcrumbs a { color: var(--accent-link); }
+.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs [aria-current="page"] { color: var(--text); }
+
+html[data-theme="dark"] .breadcrumbs li + li::before { color: #5a6479; }
+
+/* ============================================================
+   Боковая навигация
+   ============================================================ */
+
+.sidenav { background: var(--bg-card); }
+.sidenav a { color: var(--text); }
+
+.sidenav a:hover {
+  background: var(--bg-subtle);
+  color: var(--accent);
+}
+
+.sidenav a[aria-current="page"] {
+  background: linear-gradient(135deg, #1e3c72, #6a11cb);
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .sidenav a[aria-current="page"] {
+  background: linear-gradient(135deg, #3a1e5e, #6a11cb);
+  color: #ffffff;
+}
+
+/* ============================================================
+   Памятки
+   ============================================================ */
+
+.memo-list li { color: var(--text-muted); }
+.memo-list li::before { color: var(--accent); }
+
+/* ============================================================
+   Новости
+   ============================================================ */
+
+.news-item time { color: var(--accent); }
+.news-item .more { color: var(--accent-2); }
+.news-item .more:hover { color: var(--accent); }
+
+/* ============================================================
+   Подвал
+   ============================================================ */
+
+.footer-nav a,
+.footer-sources a,
+.footer-contacts p { color: #cfd6ea; }
+
+.footer-nav a:hover,
+.footer-sources a:hover { color: #ffd200; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  color: #8b96b8;
+}
+
+/* ============================================================
+   Поиск и mark
+   ============================================================ */
+
+.search-box { background: var(--bg-card); }
+
+.search-box input {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.search-box input::placeholder { color: var(--text-muted); }
+#search-count { color: var(--text-muted); }
+
+mark {
+  background: var(--mark-bg);
+  color: var(--mark-text);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* ============================================================
+   Чек-лист
+   ============================================================ */
+
+.checklist-toolbar { background: var(--bg-card); box-shadow: var(--shadow); }
+
+.checklist-result {
+  background: var(--result-neutral-bg);
+  color: var(--result-neutral-text);
+  transition: background .3s ease, color .3s ease;
+}
+
+.checklist-result.level-high { background: var(--result-high-bg); color: var(--result-high-text); }
+.checklist-result.level-mid  { background: var(--result-mid-bg);  color: var(--result-mid-text); }
+.checklist-result.level-low  { background: var(--result-low-bg);  color: var(--result-low-text); }
+
+.checklist-item {
+  background: var(--bg-card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.checklist-item.is-fail {
+  border-left-color: var(--notice-warning-border);
+  background: linear-gradient(90deg, var(--fail-gradient-start) 0%, var(--bg-card) 60%);
+}
+
+.checklist-item__title { color: var(--text); }
+.checklist-item__options label { color: var(--text-muted); }
+
+.checklist-item__comment {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.checklist-item__comment::placeholder { color: var(--text-muted); }
+
+/* ============================================================
+   Модальное окно
+   ============================================================ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+
+.modal.is-open { display: flex; }
+
+.modal__content {
+  position: relative;
+  background: var(--bg-card);
+  color: var(--text);
+  max-width: 520px;
+  width: 100%;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+}
+
+.modal__content h2 { color: var(--text); margin-bottom: 16px; }
+.modal__content p { color: var(--text-muted); margin-bottom: 12px; }
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: 50%;
+  transition: background .25s ease;
+}
+
+.modal__close:hover { background: var(--bg-subtle); }
+.modal__close:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+
+/* ============================================================
+   Выделение и фокус
+   ============================================================ */
+
+::selection { background: var(--accent); color: #ffffff; }
+
+:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Скроллбар в тёмной теме
+   ============================================================ */
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] ::-webkit-scrollbar { width: 12px; height: 12px; }
+html[data-theme="dark"] ::-webkit-scrollbar-track { background: #0f1420; }
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #2a3247;
+  border-radius: 6px;
+  border: 3px solid #0f1420;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: #3a4459; }
+
+/* ============================================================
+   Плавные переходы
+   ============================================================ */
+
+.card,
+.news-item,
+.sidenav,
+.note,
+.data-table,
+.notice,
+.checklist-item,
+.modal__content,
+.search-box {
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
