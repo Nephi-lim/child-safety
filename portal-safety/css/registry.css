@@ -1,0 +1,185 @@
+/* ============================================================
+   registry.css — стили каталога и гистограммы
+   ============================================================ */
+
+.registry-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.registry-filters input[type="search"] {
+  flex: 1 1 260px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+.registry-filters input::placeholder { color: var(--text-muted); }
+
+.registry-filters select {
+  padding: 10px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: .95rem;
+  background: var(--bg-card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.registry-status {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.registry-status strong { color: var(--accent); }
+
+.registry-table tbody tr {
+  transition: background .2s ease;
+}
+
+.registry-table tbody tr:hover {
+  background: var(--table-hover);
+  box-shadow: inset 4px 0 0 var(--accent-2);
+}
+
+.registry-empty {
+  margin: 24px 0;
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.registry-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  color: var(--text-muted);
+}
+
+.registry-loading::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--border-strong);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.registry-error {
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: var(--notice-warning-bg);
+  border-left: 5px solid var(--notice-warning-border);
+  border-radius: 14px;
+  color: var(--text);
+}
+
+.registry-error strong { color: var(--notice-warning-title); }
+
+.registry-table th[data-sort] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.registry-table th.is-sorted-asc::after {
+  content: " ↑";
+  color: var(--accent-2);
+}
+
+.registry-table th.is-sorted-desc::after {
+  content: " ↓";
+  color: var(--accent-2);
+}
+
+.registry-table mark {
+  background: var(--mark-bg);
+  color: var(--mark-text);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* ---------- Статистика ---------- */
+.stats {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.stats__group {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.stats__title {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.stats__row {
+  display: grid;
+  grid-template-columns: 200px 1fr 60px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stats__label {
+  font-size: .95rem;
+  color: var(--text-muted);
+}
+
+.stats__bar {
+  height: 22px;
+  background: var(--bg-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.stats__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 6px;
+  transition: width .8s ease;
+  width: 0;
+}
+
+.stats__value {
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .stats__row { grid-template-columns: 1fr 60px; }
+  .stats__label { grid-column: 1 / -1; }
+}

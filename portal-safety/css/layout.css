@@ -1,0 +1,579 @@
+/* ---------- Задание 2. Каркас страницы на CSS Grid ---------- */
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+}
+
+:root {
+  --content-width: 1100px;
+  --field: 20px;
+  --radius: 16px;
+  --radius-lg: 24px;
+}
+
+.container {
+  max-width: var(--content-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--field);
+}
+
+/* ---------- Заголовки разделов: акцентная черта ---------- */
+section h2 {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ff7a18, #6a11cb);
+}
+
+/* ---------- Основные положения ---------- */
+.key-points {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.key-points > ul {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.key-points > ul li {
+  position: relative;
+  padding: 14px 16px 14px 44px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(30, 60, 114, .1);
+}
+
+.key-points > ul li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd200, #ff7a18);
+}
+
+.note {
+  background: linear-gradient(160deg, #1e3c72, #6a11cb);
+  color: #e8ecf7;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(30, 60, 114, .3);
+}
+
+.note h3 { color: #ffffff; margin-bottom: 10px; }
+.note p { color: #c9d2ea; margin-bottom: 10px; }
+.note a { color: #ffd200; text-decoration: underline; text-underline-offset: 3px; }
+.note a:hover { color: #ffffff; }
+
+/* ---------- Разделы проекта ---------- */
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (max-width: 1000px) {
+  .sections-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .sections-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Бейджи сложности ---------- */
+.badge {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.badge--easy { background: #e3f7e9; color: #1e7e34; }
+.badge--mid  { background: #fff1de; color: #b35400; }
+
+/* ---------- Кнопка-призрак ---------- */
+.btn--ghost {
+  background: transparent;
+  color: #1e3c72;
+  border: 2px solid #1e3c72;
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background: #1e3c72;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(30, 60, 114, .35);
+}
+
+/* ---------- Лента новостей ---------- */
+.news {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 24px;
+  box-shadow: 0 6px 18px rgba(30, 60, 114, .1);
+  border-left: 4px solid transparent;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(30, 60, 114, .18);
+  border-left-color: #ff7a18;
+}
+
+.news-item time {
+  font-weight: 700;
+  color: #6a11cb;
+  font-size: .95rem;
+}
+
+.news-item h3 { margin-bottom: 4px; }
+.news-item p { color: #46506b; }
+
+.news-item .more {
+  font-weight: 600;
+  color: #ff7a18;
+  white-space: nowrap;
+}
+
+.news-item .more:hover { color: #6a11cb; }
+
+/* ---------- Подвал ---------- */
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.footer-col__title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.footer-nav li, .footer-sources li { margin-bottom: 8px; }
+
+.footer-nav a, .footer-sources a {
+  color: #cfd6ea;
+}
+
+.footer-nav a:hover, .footer-sources a:hover {
+  color: #ffd200;
+  padding-left: 6px;
+}
+
+.footer-contacts p { color: #cfd6ea; line-height: 1.8; }
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  padding-top: 20px;
+  margin-top: 8px;
+}
+
+/* ---------- Улучшения качества ---------- */
+::selection {
+  background: #6a11cb;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 3px solid #ff7a18;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Задание 3. Меню шапки ---------- */
+.main-nav ul {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+.main-nav a.active {
+  background: rgba(255, 255, 255, .22);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .4);
+}
+
+/* ---------- Задание 4. Герой с анимированным фоном ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 56px 48px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(30, 60, 114, .12);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: .55;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 300px;
+  height: 300px;
+  top: -90px;
+  right: -50px;
+  background: radial-gradient(circle, #ffd200, transparent 70%);
+}
+
+.hero::after {
+  width: 240px;
+  height: 240px;
+  bottom: -100px;
+  right: 160px;
+  background: radial-gradient(circle, #b06ab3, transparent 70%);
+}
+
+.hero h1, .hero .lead, .hero-actions {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   Закрепление шапки при скролле
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* ============================================================
+   Занятие 3. Двухколоночная раскладка и компоненты разделов
+   ============================================================ */
+
+.page {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 32px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.page__main {
+  min-width: 0;
+}
+
+.page__aside {
+  align-self: start;
+  position: sticky;
+  top: 96px;
+}
+
+@media (max-width: 860px) {
+  .page { grid-template-columns: 1fr; }
+  .page__aside { position: static; }
+}
+
+/* ---------- Хлебные крошки ---------- */
+.breadcrumbs {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  font-size: .95rem;
+  color: #46506b;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 8px;
+  color: #b5bdd0;
+}
+
+.breadcrumbs a {
+  color: #6a11cb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.breadcrumbs a:hover { color: #1e3c72; }
+
+.breadcrumbs [aria-current="page"] {
+  color: #1c2333;
+  font-weight: 600;
+}
+
+/* ---------- Боковая навигация ---------- */
+.sidenav {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(30, 60, 114, .12);
+}
+
+.sidenav ul {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+}
+
+.sidenav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #1c2333;
+  transition: background .2s ease, color .2s ease;
+}
+
+.sidenav a:hover {
+  background: #efe6ff;
+  color: #6a11cb;
+}
+
+.sidenav a[aria-current="page"] {
+  background: linear-gradient(135deg, #1e3c72, #6a11cb);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ---------- Врезки ---------- */
+.notice {
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-left: 5px solid;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.notice:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(30, 60, 114, .15);
+}
+
+.notice h3 { margin-bottom: 8px; font-size: 1.05rem; }
+.notice p { margin-bottom: 8px; }
+.notice p:last-child { margin-bottom: 0; }
+
+.notice--warning {
+  background: #fff1de;
+  border-color: #ff7a18;
+}
+.notice--warning h3 { color: #b35400; }
+
+.notice--tip {
+  background: #e3f7e9;
+  border-color: #1e7e34;
+}
+.notice--tip h3 { color: #1e7e34; }
+
+.notice--order {
+  background: #efe6ff;
+  border-color: #6a11cb;
+}
+.notice--order h3 { color: #6a11cb; }
+
+.notice--order ol {
+  list-style: decimal inside;
+  display: grid;
+  gap: 6px;
+  color: #46506b;
+  padding: 0;
+}
+
+/* ---------- Таблицы ---------- */
+.table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(30, 60, 114, .1);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: .95rem;
+  min-width: 480px;
+}
+
+.data-table caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 12px 16px;
+  background: #efe6ff;
+  color: #1e3c72;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e6ebf3;
+}
+
+.data-table thead th {
+  background: #1e3c72;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: #f7f9fc;
+}
+
+.data-table tbody tr:hover {
+  background: #efe6ff;
+}
+
+/* ---------- Подразделы контентной страницы ---------- */
+.page__main section {
+  padding: 24px 0 8px;
+}
+
+.page__main section h2 {
+  margin-top: 8px;
+}
+
+/* ============================================================
+   Адаптив
+   ============================================================ */
+@media (max-width: 720px) {
+  .header-inner {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .main-nav ul {
+    justify-content: flex-start;
+    row-gap: 6px;
+    column-gap: 4px;
+  }
+
+  .main-nav a {
+    padding: 6px 10px;
+    font-size: .9rem;
+  }
+
+  section {
+    padding: 32px 0;
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero {
+    padding: 32px 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+    overflow-wrap: anywhere;
+  }
+
+  .hero .lead {
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+
+  .cards,
+  .sections-grid,
+  .key-points {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .note {
+    padding: 18px 16px;
+  }
+
+  .note a {
+    word-break: break-word;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px 18px;
+  }
+
+  .footer-inner {
+    gap: 24px;
+  }
+
+  section[id] {
+    scroll-margin-top: 128px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.4rem; }
+  .marquee { font-size: .85rem; }
+  .card { padding: 18px 16px; }
+  .news-item { padding: 14px 16px; }
+}

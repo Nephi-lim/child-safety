@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дети в сети — портал безопасности детей в интернете</title>
+  <meta name="description" content="Учебный портал о безопасности детей в интернете: угрозы, правила, тренажёры, игровые ситуации, тестирование, памятки для родителей и детей.">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/checklist.css">
+  <link rel="stylesheet" href="../css/games.css">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <link rel="stylesheet" href="../css/print.css" media="print">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/app.js" defer></script>
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Портал «Дети в сети» — на главную">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="logo-text">Дети в сети</span>
+      </a>
+
+      <button class="theme-toggle" type="button" aria-label="Переключить тему"></button>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a class="active" href="index.html">Главная</a></li>
+          <li><a href="index.html#key-points">Положения</a></li>
+          <li><a href="index.html#threats">Разделы</a></li>
+          <li><a href="index.html#rules">Правила</a></li>
+          <li><a href="games.html">Игры</a></li>
+          <li><a href="registry.html">Каталог</a></li>
+          <li><a href="checklist.html">Чек-лист</a></li>
+          <li><a href="knowledge.html">Проверка знаний</a></li>
+          <li><a href="index.html#memos">Памятки</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Думай перед кликом&nbsp;&bull;&nbsp;Не сообщай личные данные&nbsp;&bull;&nbsp;Не общайся с незнакомцами&nbsp;&bull;&nbsp;Расскажи взрослым о тревожном&nbsp;&bull;&nbsp;Сильный пароль — твой щит&nbsp;&bull;&nbsp;</span>
+      <span>Думай перед кликом&nbsp;&bull;&nbsp;Не сообщай личные данные&nbsp;&bull;&nbsp;Не общайся с незнакомцами&nbsp;&bull;&nbsp;Расскажи взрослым о тревожном&nbsp;&bull;&nbsp;Сильный пароль — твой щит&nbsp;&bull;&nbsp;</span>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero container">
+      <h1>Безопасность детей в интернете</h1>
+      <p class="lead">Учебный портал, который помогает детям и родителям распознавать угрозы,
+        соблюдать правила безопасности и грамотно использовать цифровые технологии.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn--accent" href="games.html">Начать тренировку</a>
+        <a class="btn" href="#memos">Памятки для родителей</a>
+        <button class="btn" type="button" data-open-modal>О портале</button>
+      </div>
+    </section>
+
+    <section class="container search-section" aria-label="Поиск по порталу">
+      <div class="search-box">
+        <input type="search" id="site-search" placeholder="Поиск по разделам..." aria-label="Поиск по разделам">
+        <span id="search-count" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section id="key-points" class="container">
+      <h2>Основные положения по теме</h2>
+      <p class="section-note">Кратко о том, что важно знать о безопасности детей в интернете.</p>
+
+      <div class="key-points">
+        <ul>
+          <li>Интернет — это среда, а не игрушка: правила безопасности действуют всегда.</li>
+          <li>Личные данные (адрес, телефон, школа, фото) — главная ценность для злоумышленников.</li>
+          <li>Фишинг и мошенничество маскируются под «выигрыши» и «бонусы».</li>
+          <li>Кибербуллинг — это травля; её нельзя терпеть молча.</li>
+          <li>Родительский контроль и открытый диалог — основа защиты.</li>
+          <li>Баланс экранного времени и реальной жизни сохраняет здоровье.</li>
+        </ul>
+
+        <aside class="note" aria-label="Примечание и источники">
+          <h3>Примечание</h3>
+          <p>Материалы раздела опираются на рекомендации по цифровой безопасности
+            и медиаграмотности. Ознакомиться с первоисточниками можно по ссылкам:</p>
+          <p>
+            <a href="https://www.unicef.org/child-safety-online" target="_blank" rel="noopener">UNICEF — Child safety online</a><br>
+            <a href="https://www.who.int/" target="_blank" rel="noopener">ВОЗ — здоровье и цифровая среда</a><br>
+            <a href="https://pd.rkn.gov.ru/" target="_blank" rel="noopener">Роскомнадзор — защита персональных данных</a>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="threats" class="container">
+      <h2>Разделы проекта</h2>
+      <p class="section-note">Четыре ключевых раздела портала.</p>
+
+      <div class="sections-grid">
+        <article class="card" data-searchable>
+          <img class="sign" src="../assets/img/sign-chat.svg" alt="Знак: опасное общение">
+          <h3>Раздел 1. Кибербуллинг</h3>
+          <p>Травля и оскорбления в чатах, соцсетях и играх. Как распознать и что делать.</p>
+          <a class="btn btn--small" href="section-1.html">Читать раздел</a>
+        </article>
+
+        <article class="card" data-searchable>
+          <img class="sign" src="../assets/img/sign-lock.svg" alt="Знак: мошенники и фишинг">
+          <h3>Раздел 2. Мошенники и фишинг</h3>
+          <p>«Выигрыши», подозрительные ссылки и кража паролей — как не попасться.</p>
+          <a class="btn btn--small" href="section-2.html">Читать раздел</a>
+        </article>
+
+        <article class="card card--glow" data-searchable>
+          <img class="sign" src="../assets/img/sign-eye.svg" alt="Знак: неприемлемый контент">
+          <h3>Раздел 3. Неприемлемый контент</h3>
+          <p>Жестокие видео, опасные «челленджи» и вредные группы. Что делать при встрече.</p>
+          <a class="btn btn--small" href="section-3.html">Читать раздел</a>
+        </article>
+
+        <article class="card" data-searchable>
+          <img class="sign" src="../assets/img/sign-shield.svg" alt="Знак: защита личных данных">
+          <h3>Раздел 4. Личные данные</h3>
+          <p>Адрес, школа, фото дома — почему это ценно для злоумышленников.</p>
+          <a class="btn btn--small" href="index.html#memos">Памятки</a>
+        </article>
+      </div>
+
+      <p class="section-note" style="margin-top: 16px;">
+        <a href="../bootstrap/catalog-bootstrap.html">Альтернативная версия каталога на Bootstrap →</a>
+      </p>
+    </section>
+
+    <section id="rules" class="container">
+      <h2>Правила безопасности</h2>
+      <p class="section-note">Шесть простых правил, которые защищают в сети каждый день.</p>
+
+      <div class="cards">
+        <article class="card" data-searchable>
+          <h3>1. Не разглашай личные данные</h3>
+          <p>Адрес, телефон, пароли, фото дома и документы никому не сообщай — даже «друзьям» из игры.</p>
+        </article>
+        <article class="card" data-searchable>
+          <h3>2. Думай перед кликом</h3>
+          <p>Не скачивай файлы с сомнительных сайтов и не открывай вложения от незнакомых отправителей.</p>
+        </article>
+        <article class="card" data-searchable>
+          <h3>3. Общайся вежливо</h3>
+          <p>Не участвуй в травле. Если тебя обижают — сохрани доказательства, заблокируй и пожалуйся.</p>
+        </article>
+        <article class="card" data-searchable>
+          <h3>4. Рассказывай взрослым</h3>
+          <p>О любом подозрительном сообщении или тревожной ситуации расскажи родителям или учителю.</p>
+        </article>
+        <article class="card" data-searchable>
+          <h3>5. Соблюдай баланс</h3>
+          <p>Чередуй онлайн-занятия с отдыхом без экранов, спортом и общением в реальной жизни.</p>
+        </article>
+        <article class="card" data-searchable>
+          <h3>6. Проверяй источники</h3>
+          <p>Не всё, что написано в интернете, — правда. Сравнивай информацию с надёжными источниками.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="games" class="container">
+      <h2>Тренажёры</h2>
+      <p class="section-note">Короткие упражнения для тренировки конкретных навыков безопасности.</p>
+
+      <div class="cards">
+        <article class="card" data-searchable>
+          <span class="badge badge--easy">лёгкий</span>
+          <h3>Поймай фишинг</h3>
+          <p>Отличай настоящие письма от мошеннических по адресу отправителя, ссылкам и формулировкам.</p>
+          <a class="btn btn--small" href="games.html#phishing">Тренироваться</a>
+        </article>
+
+        <article class="card" data-searchable>
+          <span class="badge badge--mid">средний</span>
+          <h3>Собери пароль</h3>
+          <p>Собери пароль, устойчивый ко взлому: длина, буквы разного регистра, цифры и символы.</p>
+          <a class="btn btn--small" href="games.html#password">Тренироваться</a>
+        </article>
+
+        <article class="card" data-searchable>
+          <span class="badge badge--easy">лёгкий</span>
+          <h3>Что можно публиковать?</h3>
+          <p>Рассортируй данные: что можно выкладывать, что — только близким, а что — никому.</p>
+          <a class="btn btn--small" href="games.html#publish">Тренироваться</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="situations" class="container">
+      <h2>Игровые ситуации</h2>
+      <p class="section-note">Принимай решения в реалистичных сценариях — и узнавай последствия.</p>
+
+      <div class="cards">
+        <article class="card" data-searchable>
+          <h3>Ситуации-развилки</h3>
+          <p>Переписка с незнакомцем, «бесплатная» накрутка, просьба прислать фото.
+            Каждый выбор ведёт к своему финалу.</p>
+          <a class="btn btn--small btn--ghost" href="games.html#fork">Играть</a>
+        </article>
+
+        <article class="card" data-searchable>
+          <h3>День из жизни</h3>
+          <p>Проведи героя через один день в сети: школьный чат, игра, внезапное сообщение.
+            Не попадись!</p>
+          <a class="btn btn--small btn--ghost" href="games.html#day">Играть</a>
+        </article>
+
+        <article class="card" data-searchable>
+          <h3>Кибербуллинг: стоп</h3>
+          <p>Интерактивная история о травле в классном чате — как поддержать и как остановить.</p>
+          <a class="btn btn--small btn--ghost" href="games.html#stop">Играть</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="news" class="container">
+      <h2>Новости и анонсы</h2>
+      <p class="section-note">Свежие материалы по теме безопасности в сети.</p>
+
+      <div class="news">
+        <article class="news-item" data-searchable>
+          <time datetime="2026-09-15">15.09.2026</time>
+          <div>
+            <h3>Неделя цифровой грамотности</h3>
+            <p>В школах стартует неделя занятий по безопасному поведению в интернете.</p>
+          </div>
+          <a class="more" href="#news">Подробнее →</a>
+        </article>
+
+        <article class="news-item" data-searchable>
+          <time datetime="2026-09-28">28.09.2026</time>
+          <div>
+            <h3>Новые тренажёры</h3>
+            <p>На портале появились игровые ситуации «Поймай фишинг» и «Собери пароль».</p>
+          </div>
+          <a class="more" href="#news">Подробнее →</a>
+        </article>
+
+        <article class="news-item" data-searchable>
+          <time datetime="2026-10-05">05.10.2026</time>
+          <div>
+            <h3>Памятка для родителей</h3>
+            <p>Обновлённая памятка с настройками родительского контроля и приватности.</p>
+          </div>
+          <a class="more" href="#news">Подробнее →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="test" class="container">
+      <h2>Тестирование</h2>
+      <p class="section-note">Проверь себя: 10 вопросов об угрозах и правилах. Время прохождения — около 5 минут.</p>
+
+      <ol class="quiz-preview">
+        <li>Что делать, если незнакомец в сети просит прислать фото твоего дома?</li>
+        <li>Как отличить фишинговое письмо от настоящего?</li>
+        <li>Каким должен быть надёжный пароль?</li>
+      </ol>
+
+      <a class="btn btn--accent" href="knowledge.html">Пройти тест</a>
+    </section>
+
+    <section id="memos" class="container">
+      <h2>Памятки</h2>
+      <p class="section-note">Распечатай и держи под рукой.</p>
+
+      <div class="cards cards--two">
+        <article class="card memo" data-searchable>
+          <h3>Памятка для детей</h3>
+          <ul class="memo-list">
+            <li>Не сообщай пароли, адрес и номер телефона.</li>
+            <li>Не встречайся с интернет-знакомыми в одиночку.</li>
+            <li>Расскажи взрослым, если страшно или обидно.</li>
+            <li>Договаривайся с родителями о времени за экраном.</li>
+          </ul>
+        </article>
+
+        <article class="card memo" data-searchable>
+          <h3>Памятка для родителей</h3>
+          <ul class="memo-list">
+            <li>Обсудите правила безопасности вместе с ребёнком.</li>
+            <li>Настройте родительский контроль и приватность профилей.</li>
+            <li>Интересуйтесь, с кем и где общается ребёнок.</li>
+            <li>Подавайте пример разумного использования гаджетов.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>Навигация</h3>
+        <nav class="footer-nav" aria-label="Навигация в подвале">
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="index.html#key-points">Положения</a></li>
+            <li><a href="index.html#threats">Разделы</a></li>
+            <li><a href="index.html#rules">Правила</a></li>
+            <li><a href="games.html">Игры</a></li>
+            <li><a href="registry.html">Каталог</a></li>
+            <li><a href="checklist.html">Чек-лист</a></li>
+            <li><a href="knowledge.html">Проверка знаний</a></li>
+            <li><a href="index.html#memos">Памятки</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-col footer-contacts">
+        <h3>Учебное заведение</h3>
+        <p>Пинский государственный колледж техники и технологии<br>
+           Практика веб-программирования<br>
+           г. Пинск, ул. Федотова, 36<br>
+           +7 (000) 000-00-00<br>
+           info@example.edu</p>
+      </div>
+
+      <div class="footer-col footer-sources">
+        <h3>Источники</h3>
+        <ul>
+          <li><a href="https://www.unicef.org/child-safety-online" target="_blank" rel="noopener">UNICEF</a></li>
+          <li><a href="https://www.who.int/" target="_blank" rel="noopener">ВОЗ</a></li>
+          <li><a href="https://pd.rkn.gov.ru/" target="_blank" rel="noopener">Роскомнадзор</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Портал «Дети в сети». Учебный проект по дисциплине «Веб-программирование».</p>
+        <p>Тема: безопасность детей в интернете (угрозы, правила, тренажёры, тестирование, памятки).</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal-about" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal__content">
+      <button class="modal__close" type="button" aria-label="Закрыть окно">×</button>
+      <h2 id="modal-title">О портале</h2>
+      <p>Портал «Дети в сети» — учебный проект, посвящённый безопасности детей в интернете. Здесь собраны материалы об основных угрозах, правилах поведения и способах защиты.</p>
+      <p>Материалы основаны на рекомендациях UNICEF, ВОЗ и Роскомнадзора.</p>
+    </div>
+  </div>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>
